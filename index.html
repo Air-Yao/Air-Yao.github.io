@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="DIRECT: Decentralized Intention and Latent Rule-Emergent for Multi-Agent Cooperation under Intermittent Communication">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+        });
+    });
+</script>
+
+<style>
+  .katex {
+    font-size: 1em !important; 
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.bootcdn.net"> 
+<link rel="preconnect" href="https://cdn.jsdelivr.net"> 
+
+<title>DIRECT: Decentralized Intention and Latent Rule-Emergent for Multi-Agent Cooperation under Intermittent Communication</title>
+
+
+<link rel="icon" href="static/images/logo.jpg">
+
+<link rel="stylesheet" href="static/css/bulma.min.css">
+<link rel="stylesheet" href="static/css/index.css">
+
+
+<link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+<noscript>
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+</noscript>
+
+
+<link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/inter/4.0/Inter.css" rel="stylesheet">
+
+<script defer src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script defer src="static/js/bulma-carousel.min.js"></script>
+<script defer src="static/js/bulma-slider.min.js"></script>
+<script defer src="static/js/index.js"></script>
+
+  
+</head>
+<body>
+
+
+ 
+
+
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            
+            <h1 class="title is-1 publication-title"  style="display: flex; align-items: center; justify-content: center;">
+             
+            <span>&nbsp;DIRECT: Decentralized Intention and Latent Rule-Emergent for Multi-Agent Cooperation under Intermittent Communication&nbsp;</span>
+            
+            </h1>
+
+            <h2 class="subtitle is-3 publication-subtitle">
+           Submission for IJCAI 2026 with ID:1595
+          </h2>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- TODO: Add your supplementary material PDF or remove this section -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://anonymous.4open.science/r/DIRECT-master-F0BD" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+         
+             <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+                 <source src="static/videos/qimen2.mp4" type="video/mp4">
+            </video>
+          <h2 class="title is-5">功能展示</h2>
+         
+        </div>
+        <div class="column is-half has-text-centered">
+          
+             <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+                 <source src="static/videos/real.mp4" type="video/mp4">
+            </video>
+          <h2 class="title is-5">实际部署</h2>
+          
+        </div>
+      </div>
+   </div>
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Most of the existing decentralized multi-agent systems facilitate coordination by achieving consensus. However, reaching global consensus among a large number of agents in complex settings is challenging because resolving a local disagreement often triggers cascading adjustments across the system. This problem is further exacerbated under intermittent communication. In the field of transportation, human drivers usually rely on intentions (e.g., turn signals) in conjunction with traffic rules (such as ``yielding to through traffic") to achieve efficient cooperation, instead of establishing consensus with all surrounding vehicles. Inspired by this observation, we propose the <em>Intention</em> $\otimes$ <em>Latent Rule</em> paradigm to facilitate coordination <em>beyond consensus</em>, which is instantiated by <strong>DIRECT</strong> (<strong>D</strong>ecentralized <strong>I</strong>ntention and Latent <strong>R</strong>ule-<strong>E</strong>mergent <strong>C</strong>oopera<strong>T</strong>ion). Within this framework, agents forecast their intentions based on current actions, and the latent rule inference module infers a latent rule from available information to modulate competing intentions, enabling cooperative action selection even when communication is disrupted. Extensive experiments on challenging StarCraft II micromanagement and Multi-Agent Particle Environments demonstrate that DIRECT consistently outperforms state-of-the-art methods, achieving more robust coordination across a range of communication-degraded scenarios. Our code is available at https://anonymous.4open.science/r/DIRECT-master-F0BD.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- TODO: Replace with your research result images -->
+        <img src="static/images/fig1.png" alt="First research result visualization" loading="lazy"/>
+        <!-- TODO: Replace with description of this result -->
+        <h2 class="subtitle has-text-centered">
+         An example of conflict resolution via latent rules. <em>Left:</em> A potential collision risk arises as the red vehicle intends to turn left while the blue vehicle proceeds straight, creating intersecting trajectories.  <em>Right:</em> Adhering to the standard traffic rule ("left-turn yields to straight"), the turning vehicle yields to the straight-moving one.
+        </h2>
+      </div>
+
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/fig2.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Overview of the proposed DIRECT framework. The top panel illustrates the recurrent information flow across timesteps, while the bottom panel details the computation at timestep $t$ under the <em>Intention</em> $\otimes$ <em>Latent Rule</em> formulation. Specifically, the <em>Intention Forecaster</em> predicts an intention representation $\mathbf{m}_t^i$ for each agent based on its recent action $a_{t-1}^i$. To handle communication volatility, the <em>Latent Rule Inference Module</em> maintains an episodic memory ($M^i_t, T^i_t$) and employs a time-decay gating mechanism to synthesize a latent rule $e_t^i$ from partial neighborhood signals. Finally, the <em>Agent Policy Network</em> conditions the local policy based on this latent rule-derived guidance, enabling decentralized coordination.
+        </h2>
+      </div>
+
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/fig3.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Performance comparison between DIRECT and baselines on the SMAC and MPE benchmarks.
+        </h2>
+      </div>
+
+              <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/fig4.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Case study from an episode of the SMAC <em>6h_vs_8z</em> scenario. Two representative timesteps ($t=33$ and $t=46$) are shown to illustrate how action-grounded intention communication shapes decentralized coordination. At $t=33$, an intention derived from a pursuit intention provides a reliable behavioral cue that influences a teammate’s target selection in the subsequent step. At $t=46$, consistent intentions communicated across agents give rise to an implicit coordination pattern, resulting in a synchronized engagement against the same opponent. This example demonstrates how intentions grounded in executed actions serve as stable coordination signals and guide local decision-making under intermittent connectivity.</h2>
+      </div>
+        
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/fig5.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Intention conflict resolution via latent rule emergence in the SMAC <em>6h_vs_8z</em> scenario. (a–b) Consecutive timesteps showing conflicting intentions at $t$ and coordinated action adjustment at $t+1$. (c) Attention weight heatmap at $t+1$, illustrating how agents selectively attend to teammates’ intentions when resolving conflicts.
+        </h2>
+      </div>
+
+        <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/fig6.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Ablation study on the core components of DIRECT. DIRECT_a removes the pretrained action encoder in <em>Intention Forecaster</em>, eliminating the action-grounded intention representation. DIRECT_b removes the <em>Latent Rule Inference Module</em>, directly using communicated intentions for action selection without latent rule emergence.
+      </h2>
+        </div>
+
+        <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/fig7.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Ablation study evaluating DIRECT performance under varying levels of information loss conducted on the SMAC and MPE benchmarks.
+        </h2>
+      </div>
+
+        <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/figB1.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Additional performance comparisons of DIRECT on SMAC benchmark scenarios.
+        </h2>
+      </div>
+
+        <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/figB2.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Supplementary ablation results on additional SMAC and MPE scenarios. This figure extends the ablation analysis in the main text by evaluating DIRECT and its variants (DIRECT_a, DIRECT_b) on additional environments.
+        </h2>
+      </div>
+
+        <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/figB3.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Performance of DIRECT under varying link failure probabilities $\omega$ on additional SMAC and MPE scenarios.
+        </h2>
+      </div>
+    
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            DIRECT: Decentralized Intention and Latent Rule-Emergent for Multi-Agent Cooperation under Intermittent Communication<br>
+            Submission for IJCAI 2026 with ID:1595
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
