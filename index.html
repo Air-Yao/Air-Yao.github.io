@@ -166,6 +166,11 @@
     line-height: 1.6;
     color: #555;
     width: 100%;
+    text-align: justify; 
+    text-justify: inter-word; 
+    hyphens: auto;  
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
     max-height: 130px; 
     overflow-y: auto;
     margin-top: auto; 
@@ -406,7 +411,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/fig1.png" alt="Fig1" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
          An example of conflict resolution via latent rules. <em>Left:</em> A potential collision risk arises as the red vehicle intends to turn left while the blue vehicle proceeds straight, creating intersecting trajectories.  <em>Right:</em> Adhering to the standard traffic rule ("left-turn yields to straight"), the turning vehicle yields to the straight-moving one.
         </h2>
       </div>
@@ -415,7 +420,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/fig2.png" alt="Fig2" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
          Overview of the proposed DIRECT framework. The top panel illustrates the recurrent information flow across timesteps, while the bottom panel details the computation at timestep $t$ under the <em>Intention</em> $\otimes$ <em>Latent Rule</em> formulation. Specifically, the <em>Intention Forecaster</em> predicts an intention representation $\mathbf{m}_t^i$ for each agent based on its recent action $a_{t-1}^i$. To handle communication volatility, the <em>Latent Rule Inference Module</em> maintains an episodic memory ($M^i_t, T^i_t$) and employs a time-decay gating mechanism to synthesize a latent rule $e_t^i$ from partial neighborhood signals. Finally, the <em>Agent Policy Network</em> conditions the local policy based on this latent rule-derived guidance, enabling decentralized coordination.
         </h2>
       </div>
@@ -424,7 +429,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/fig3.png" alt="Fig3" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
           Performance comparison between DIRECT and baselines on the SMAC and MPE benchmarks.
         </h2>
       </div>
@@ -433,7 +438,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/fig4.png" alt="Fig4" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
          Case study from an episode of the SMAC <em>6h_vs_8z</em> scenario. Two representative timesteps ($t=33$ and $t=46$) are shown to illustrate how action-grounded intention communication shapes decentralized coordination. At $t=33$, an intention derived from a pursuit intention provides a reliable behavioral cue that influences a teammate’s target selection in the subsequent step. At $t=46$, consistent intentions communicated across agents give rise to an implicit coordination pattern, resulting in a synchronized engagement against the same opponent. This example demonstrates how intentions grounded in executed actions serve as stable coordination signals and guide local decision-making under intermittent connectivity.</h2>
       </div>
         
@@ -441,7 +446,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/fig5.png" alt="Fig5" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
           Intention conflict resolution via latent rule emergence in the SMAC <em>6h_vs_8z</em> scenario. (a–b) Consecutive timesteps showing conflicting intentions at $t$ and coordinated action adjustment at $t+1$. (c) Attention weight heatmap at $t+1$, illustrating how agents selectively attend to teammates’ intentions when resolving conflicts.
         </h2>
       </div>
@@ -450,7 +455,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/fig6.png" alt="Fig6" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
          Ablation study on the core components of DIRECT. DIRECT_a removes the pretrained action encoder in <em>Intention Forecaster</em>, eliminating the action-grounded intention representation. DIRECT_b removes the <em>Latent Rule Inference Module</em>, directly using communicated intentions for action selection without latent rule emergence.
       </h2>
         </div>
@@ -459,7 +464,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/fig7.png" alt="Fig7" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
           Ablation study evaluating DIRECT performance under varying levels of information loss conducted on the SMAC and MPE benchmarks.
         </h2>
       </div>
@@ -468,7 +473,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/figB1.png" alt="FigB1" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
           Additional performance comparisons of DIRECT on SMAC benchmark scenarios.
         </h2>
       </div>
@@ -477,7 +482,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/figB2.png" alt="FigB2" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
           Supplementary ablation results on additional SMAC and MPE scenarios. This figure extends the ablation analysis in the main text by evaluating DIRECT and its variants (DIRECT_a, DIRECT_b) on additional environments.
         </h2>
       </div>
@@ -486,7 +491,7 @@
         <div class="carousel-image-wrapper" onclick="openModal(this)">
             <img src="static/images/figB3.png" alt="FigB3" />
           </div>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle">
           Performance of DIRECT under varying link failure probabilities $\omega$ on additional SMAC and MPE scenarios.
         </h2>
       </div>
