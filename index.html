@@ -399,73 +399,73 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/fig1.png" alt="Fig1" />
+            <img src="static/images/1.png" alt="Fig1" />
           </div>
         <h2 class="subtitle">
-        <em>Left:</em> A lane-change scenario illustrating that decentralized coordination requires the interplay of communicated intentions (e.g., turn signals) and traffic rules (e.g., yielding). <em>Right:</em> The intention generation mechanism, where the intention $m_i$ is derived directly from the executed action $a_i$ to ensure behavioral consistency.
+        <em>Left:</em> Previous role-based methods typically rely on predefined role spaces with learned latent embeddings. Although supporting coordination, they lack explicit behavioral semantics and are prone to entanglement with policy optimization, inherently limiting interpretability. <em>Middle:</em> GeRo uses an LLM to construct task-specific semantic roles before policy training and encodes them into frozen role embeddings, preserving explicit role meanings throughout policy learning. <em>Right:</em> Empirical results on Google Research Football show that task-specific roles outperform default roles and strong baselines, while the role-wise action composition illustrates the behavioral alignment between generated semantic roles and executed action patterns.
         </h2>
       </div>
 
       <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/fig2.png" alt="Fig2" />
+            <img src="static/images/2.png" alt="Fig2" />
           </div>
         <h2 class="subtitle">
-         Overview of the proposed DIRECT framework. The top panel illustrates the recurrent information flow across timesteps, while the bottom panel details the computation at timestep $t$ under the <em>Intention</em> $\otimes$ <em>Latent Rule</em> formulation. Specifically, the <em>Intention Forecaster</em> predicts an intention representation $\mathbf{m}_t^i$ for each agent based on its recent action $a_{t-1}^i$. To handle communication volatility, the <em>Latent Rule Inference Module</em> maintains an episodic memory ($M^i_t, T^i_t$) and employs a time-decay gating mechanism to synthesize a latent rule $e_t^i$ from partial neighborhood signals. Finally, the <em>Agent Policy Network</em> conditions the local policy based on this latent rule-derived guidance, enabling decentralized coordination.
+         Overall architecture of <strong>GeRo</strong>. Given the task description and semantic observation description, GeRo uses an LLM to generate task-conditioned semantic roles and a heuristic role function. The textual roles are encoded into fixed embeddings by a frozen semantic encoder, forming an interpretable role space separated from reinforcement learning optimization. At each timestep $t$, the heuristic function produces semantic role scores $u_i^t$, while the dynamic role evaluator estimates the role utility $v_i^t$ from the agent's local decision context and state-transition dynamics. The two signals are combined to select a suitable role $\rho_i^t$, and the embedding of the selected role conditions the downstream module for decentralized action selection. During training, the dynamic role evaluator is optimized by latent transition prediction and bootstrapped role-value prediction. During execution, the learned evaluator and role-conditioned policy operate over the fixed LLM-generated role space.
         </h2>
       </div>
 
        <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/fig3.png" alt="Fig3" />
+            <img src="static/images/3.png" alt="Fig3" />
           </div>
         <h2 class="subtitle has-text-centered">
-          Performance comparison between DIRECT and baselines on the SMAC and MPE benchmarks.
+          Performance comparison between GeRo and baselines on the SMAC and GRF benchmarks.
         </h2>
       </div>
 
         <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/fig4.png" alt="Fig4" />
+            <img src="static/images/4.png" alt="Fig4" />
           </div>
         <h2 class="subtitle">
-         Representative snapshots and timeline analysis from the <em>6h_vs_8z</em> scenario. The top panels visualize selected timesteps, showing communicated action-grounded intentions as dashed arrows and the corresponding executed actions at the subsequent timestep as solid arrows. The bottom panel summarizes, for each agent, the temporal sequences of communicated intentions (upper row) and executed actions (lower row) across the episode.
+         Case study visualization in the <em>5z\_vs\_1ul</em> scenario. The upper panels show two representative game snapshots, the middle Gantt chart records the semantic role and primitive action selected by each agent throughout one episode, and the bottom heatmap reports the role-conditional action tendency between each LLM-generated role and action category. In the Gantt chart, different colors denote semantic roles and the numbers indicate primitive action IDs in the SMAC action space. In the heatmap, darker cells indicate stronger empirical association between a role and an action category.
         </h2>
         </div>
         
       <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/fig5.png" alt="Fig5" />
+            <img src="static/images/5.png" alt="Fig5" />
           </div>
         <h2 class="subtitle">
-          Intention conflict resolution via latent rule emergence in the SMAC <em>6h_vs_8z</em> scenario. (a–b) Consecutive timesteps showing conflicting intentions at $t$ and coordinated action adjustment at $t+1$. (c) Attention weight heatmap at $t+1$, illustrating how agents selectively attend to teammates’ intentions when resolving conflicts.
+          Ablation study on different LLMs for semantic role generation.
         </h2>
       </div>
 
         <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/fig6.png" alt="Fig6" />
+            <img src="static/images/6.png" alt="Fig6" />
           </div>
         <h2 class="subtitle">
-         Ablation study on the core components of DIRECT. DIRECT_a removes the pretrained action encoder in <em>Intention Forecaster</em>, eliminating the action-grounded intention representation. DIRECT_b removes the <em>Latent Rule Inference Module</em>, directly using communicated intentions for action selection without latent rule emergence.
+         Ablation study of the core components in GeRo. GeRo<sub>h</sub> ablates the LLM-generated heuristic function to isolate the effect of role-score evaluation. GeRo<sub>e</sub> bypasses the dynamic role evaluator, forcing agents to rely strictly on static semantic role scores.
       </h2>
         </div>
 
         <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/fig7.png" alt="Fig7" />
+            <img src="static/images/7.png" alt="Fig7" />
           </div>
         <h2 class="subtitle has-text-centered">
-          Sensitivity analysis of DIRECT under varying link failure probabilities $\omega$ on the SMAC and MPE benchmarks.
+          Sensitivity analysis of GeRo under varying link failure probabilities $\omega$ on the SMAC and GRF benchmarks.
         </h2>
       </div>
 
         <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/fig8.png" alt="Fig8" />
+            <img src="static/images/8.png" alt="Fig8" />
           </div>
         <h2 class="subtitle has-text-centered">
-          Sensitivity analysis of DIRECT under varying link failure probabilities $\omega$ on the SMAC and MPE benchmarks.
+          Sensitivity analysis of the fusion coefficient $\beta$.
         </h2>
       </div>     
     
