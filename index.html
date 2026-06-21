@@ -233,7 +233,7 @@
 <link rel="preconnect" href="https://cdn.bootcdn.net"> 
 <link rel="preconnect" href="https://cdn.jsdelivr.net"> 
 
-<title>DIRECT: Decentralized Intention and Latent Rule-Emergent for Multi-Agent Cooperation under Intermittent Communication</title>
+<title>GeRo: Explicit Semantic Roles for Cooperative Multi-Agent Reinforcement Learning under Intermittent Communication</title>
 
 
 <link rel="icon" href="static/images/logo.jpg">
@@ -288,7 +288,7 @@
             
             <h1 class="title is-1 publication-title"  style="display: flex; align-items: center; justify-content: center;">
              
-            <span>&nbsp;DIRECT: Decentralized Intention and Latent Rule-Emergent for Multi-Agent Cooperation under Intermittent Communication&nbsp;</span>
+            <span>&nbsp;GeRo: Explicit Semantic Roles for Cooperative Multi-Agent Reinforcement Learning under Intermittent Communication&nbsp;</span>
             
             </h1>
 
@@ -382,7 +382,7 @@
         <div class="content has-text-justified abstract-box">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Most of the existing decentralized multi-agent systems facilitate coordination by achieving consensus. However, reaching global consensus among a large number of agents in complex settings is challenging because resolving a local disagreement often triggers cascading adjustments across the system. This problem is further exacerbated under intermittent communication. In the field of transportation, human drivers usually rely on <em>intentions</em> (e.g., turn signals) in conjunction with traffic <em>rules</em> (such as "yielding to through traffic") to achieve efficient cooperation, instead of establishing consensus with all surrounding vehicles. Inspired by this observation, we propose the <em>Intention</em> $\otimes$ <em>Latent Rule</em> paradigm to facilitate coordination <em>beyond consensus</em>, which is instantiated by <strong>DIRECT</strong> (<strong>D</strong>ecentralized <strong>I</strong>ntention and Latent <strong>R</strong>ule-<strong>E</strong>mergent <strong>C</strong>oopera<strong>T</strong>ion). Within this framework, agents forecast their intentions based on current actions, and the latent rule inference module infers a latent rule from available information to modulate competing intentions, enabling cooperative action selection even when communication is disrupted. Extensive experiments on challenging StarCraft II micromanagement and Multi-Agent Particle Environments demonstrate that DIRECT consistently outperforms state-of-the-art methods, achieving more robust coordination across a range of communication-degraded scenarios.
+           Role-based multi-agent reinforcement learning (MARL) has been widely used to improve decentralized coordination. Existing role-based methods typically rely on finite role spaces that are predefined or induced from task-specific interactions, and represent roles as trainable embeddings optimized jointly with policies. Such roles are often difficult to interpret and tightly coupled with reward-driven training. This issue becomes critical under intermittent communication. Without reliable teammate information, implicit role embeddings fail to guide agents in maintaining complementary behaviors. To address this issue, we propose <strong>GeRo</strong> (<strong>Ge</strong>nerative <strong>Ro</strong>le), a cooperative MARL framework driven by explicit semantic roles. Specifically, GeRo prompts a large language model (LLM) with task descriptions and observation semantics to generate task-conditioned roles with explicit behavioral meanings, alongside a heuristic role function. To prevent semantic degradation during reinforcement learning, these generated roles are processed through a frozen text encoder. At each timestep, GeRo dynamically selects roles by integrating the heuristic function with a learned evaluator, grounding the selection in local observations and short-horizon state-transition dynamics. By conditioning decentralized policies on these selected roles, GeRo establishes a robust semantic consensus, enabling agents to sustain coordination even under intermittent communication. Experiments on StarCraft Multi-Agent Challenge and Google Research Football show that GeRo outperforms baselines under intermittent communication, while further analyses verify role interpretability, role-action alignment, and robustness across different LLM generators. Project webpage: https://air-yao.github.io/.
           </p>
         </div>
       </div>
@@ -430,6 +430,7 @@
           </div>
         <h2 class="subtitle">
          Representative snapshots and timeline analysis from the <em>6h_vs_8z</em> scenario. The top panels visualize selected timesteps, showing communicated action-grounded intentions as dashed arrows and the corresponding executed actions at the subsequent timestep as solid arrows. The bottom panel summarizes, for each agent, the temporal sequences of communicated intentions (upper row) and executed actions (lower row) across the episode.
+        </h2>
         </div>
         
       <div class="item">
@@ -461,30 +462,12 @@
 
         <div class="item">
         <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/figB1.png" alt="FigB1" />
+            <img src="static/images/fig8.png" alt="Fig8" />
           </div>
         <h2 class="subtitle has-text-centered">
-          Additional performance comparisons of DIRECT on the SMAC benchmark.
+          Sensitivity analysis of DIRECT under varying link failure probabilities $\omega$ on the SMAC and MPE benchmarks.
         </h2>
-      </div>
-
-        <div class="item">
-        <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/figB2.png" alt="FigB2" />
-          </div>
-        <h2 class="subtitle">
-          Supplementary ablation results on additional SMAC and MPE scenarios. This figure extends the ablation analysis in the main text by evaluating DIRECT and its variants (DIRECT_a, DIRECT_b) on additional environments.
-        </h2>
-      </div>
-
-        <div class="item">
-        <div class="carousel-image-wrapper" onclick="openModal(this)">
-            <img src="static/images/figB3.png" alt="FigB3" />
-          </div>
-        <h2 class="subtitle has-text-centered">
-         Supplementary Sensitivity analysis of DIRECT under varying link failure probabilities $\omega$ on the SMAC and MPE benchmarks.
-        </h2>
-      </div>
+      </div>     
     
   </div>
 </div>
@@ -501,7 +484,7 @@
         <div class="content">
 
           <p>
-            DIRECT: Decentralized Intention and Latent Rule-Emergent for Multi-Agent Cooperation under Intermittent Communication<br>
+            GeRo: Explicit Semantic Roles for Cooperative Multi-Agent Reinforcement Learning under Intermittent Communication<br>
             <!-- Submission for IJCAI 2026 with ID:1595 -->
             Submission with ID:1595
           </p>
